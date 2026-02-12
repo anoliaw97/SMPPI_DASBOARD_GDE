@@ -1,0 +1,80 @@
+[
+  {
+    "projectID": 1,
+    "projectCode": "FRGS/1/2020/SS01/UMS/02/1",
+    "projectTitle": "Investigation of Feature-Aware Self-Supervised Learning for Speech Recognition",
+    "piName": "Dr. Ervin Gubin Moung",
+    "grantScheme": "FRGS",
+    "phase": "Fasa 1/2020",
+    "researchDomain": "ICT",
+    "allocatedBudget": 100000,
+    "spentAmount": 95000,
+    "progressPercentage": 100,
+    "projectStatus": "Completed"
+  },
+  {
+    "projectID": 2,
+    "projectCode": "FRGS/1/2020/TK0/UMS/02/6",
+    "projectTitle": "Handover Algorithm for Telecardiology in 5G Networks",
+    "piName": "Dr. Yew Hoe Tung",
+    "grantScheme": "FRGS",
+    "phase": "Fasa 1/2020",
+    "researchDomain": "Technology and Engineering",
+    "allocatedBudget": 100000,
+    "spentAmount": 98000,
+    "progressPercentage": 100,
+    "projectStatus": "Completed"
+  },
+  {
+    "projectID": 3,
+    "projectCode": "FRGS/1/2020/SS02/UMS/02/1",
+    "projectTitle": "Model Pengurusan Integrasi Asnaf Berdasarkan Konsep Islam",
+    "piName": "Dr. Aishah Tamby Omar",
+    "grantScheme": "FRGS",
+    "phase": "Fasa 1/2020",
+    "researchDomain": "Social Science",
+    "allocatedBudget": 100000,
+    "spentAmount": 92000,
+    "progressPercentage": 100,
+    "projectStatus": "Completed"
+  },
+  {
+    "projectID": 4,
+    "projectCode": "FRGS/1/2020/STG06/UMS/02/1",
+    "projectTitle": "High-Performance Perovskite Solar Cells Development",
+    "piName": "Prof. Dr. Mohammad Teridi Mohd Ali",
+    "grantScheme": "FRGS",
+    "phase": "Fasa 1/2020",
+    "researchDomain": "Pure and Applied Science",
+    "allocatedBudget": 100000,
+    "spentAmount": 97000,
+    "progressPercentage": 100,
+    "projectStatus": "Completed"
+  },
+  {
+    "projectID": 5,
+    "projectCode": "FRGS/1/2022/TK07/UMS/02/15",
+    "piName": "Dr. Yew Hoe Tung",
+    "projectTitle": "Smart Manufacturing System Integration Using IIoT",
+    "grantScheme": "FRGS",
+    "phase": "Fasa 1/2022",
+    "researchDomain": "Technology and Engineering",
+    "allocatedBudget": 131392,
+    "spentAmount": 105114,
+    "progressPercentage": 80,
+    "projectStatus": "OnSchedule"
+  },
+  {
+    "projectID": 6,
+    "projectCode": "FRGS/1/2024/SS01/UMS/02/6",
+    "projectTitle": "AI and Machine Learning for Cybersecurity Applications",
+    "piName": "Dr. Ervin Gubin Moung",
+    "grantScheme": "FRGS",
+    "phase": "Fasa 1/2024",
+    "researchDomain": "ICT",
+    "allocatedBudget": 116550,
+    "spentAmount": 46620,
+    "progressPercentage": 40,
+    "projectStatus": "Active"
+  }
+]

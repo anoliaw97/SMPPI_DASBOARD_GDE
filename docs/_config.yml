@@ -1,0 +1,25 @@
+# GitHub Pages Configuration for SMPPI Dashboard
+
+# Site settings
+title: SMPPI Dashboard
+description: Research and Innovation Management Information System - Universiti Malaysia Sabah
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Include files/folders starting with underscore
+include:
+  - _*
+
+# Theme (optional - for documentation)
+# theme: minima
