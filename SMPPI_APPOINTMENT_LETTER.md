@@ -3,19 +3,19 @@
 
 ---
 
-**Valentino Liaw**
-Mile 4, Jalan Kampung Kionsom Lama,
-Inanam, 88450, Sabah
+**[Nama Pekerja]**
+[Alamat]
+[Bandar, Poskod, Negeri]
 
-**11 April 2025**
+**22 November 2025**
 
-Encik,
+Encik/Puan,
 
 ## PELANTIKAN SEBAGAI RESEARCH DATA OFFICER
 
-Merujuk perkara di atas, saya ingin melantik **Encik Valentino Liaw** sebagai **Research Data Officer** untuk projek **RMC0005 (PEMBANGUNAN SISTEM MAKLUMAT PENGURUSAN PENYELIDIK DAN INOVASI - SMPPI DASHBOARD DI UNIVERSITI MALAYSIA SABAH)**.
+Merujuk perkara di atas, saya ingin melantik **Encik/Puan [Nama]** sebagai **Research Data Officer** untuk projek **RMC0005 (PEMBANGUNAN SISTEM MAKLUMAT PENGURUSAN PENYELIDIK DAN INOVASI - SMPPI DASHBOARD DI UNIVERSITI MALAYSIA SABAH)**.
 
-2. Tempoh pelantikan merangkumi masa **10 minggu** bermula dari **11 April 2025** sehingga **20 Jun 2025**. Butiran kadar bayaran terdapat dalam Jadual 1.
+2. Tempoh pelantikan merangkumi masa **10 minggu** bermula dari **22 November 2025** sehingga **31 Januari 2026**. Butiran kadar bayaran terdapat dalam Jadual 1.
 
 ### Jadual 1. Kadar bayaran
 
@@ -31,7 +31,7 @@ Merujuk perkara di atas, saya ingin melantik **Encik Valentino Liaw** sebagai **
 
 3. Senarai skop tugasan adalah seperti di **Lampiran 1** untuk rujukan Encik selanjutnya.
 
-4. Elaun sebanyak **RM 5,000.00** akan dibayar kepada Encik Valentino Liaw setelah tugas selesai dilaksanakan dari **11 April 2025** sehingga **20 Jun 2025**.
+4. Elaun sebanyak **RM 5,000.00** akan dibayar kepada Encik/Puan [Nama] setelah tugas selesai dilaksanakan dari **22 November 2025** sehingga **31 Januari 2026**.
 
 Yang Ikhlas,
 
@@ -44,210 +44,226 @@ Kod dan tajuk projek: **RMC0005 (Pembangunan Sistem Maklumat Pengurusan Penyelid
 # LAMPIRAN 1
 
 # SCOPE OF WORK FOR RESEARCH DATA OFFICER
-## MR. VALENTINO LIAW
-### (10 WEEKS: 11 APRIL 2025 – 20 JUN 2025)
+## [NAMA PEKERJA]
+### (10 WEEKS: 22 NOVEMBER 2025 – 31 JANUARY 2026)
 
 ## INTRODUCTION
 
-During this ten-week engagement, the Research Data Officer will assist the Research Management Centre (RMC) in the development and implementation of the SMPPI (Sistem Maklumat Pengurusan Penyelidik dan Inovasi) Dashboard - a comprehensive research and innovation management information system. The role focuses on database setup, data migration, system testing, and ensuring data accuracy to enhance the overall research management capabilities at Universiti Malaysia Sabah. The work is organized into three phases that align with system development milestones.
+During this ten-week engagement, the Research Data Officer will assist the Research Management Centre (RMC) in developing and demonstrating the SMPPI (Sistem Maklumat Pengurusan Penyelidik dan Inovasi) Dashboard - a proof-of-concept research and innovation management information system. The role focuses on system configuration, sample data preparation, feature validation, and preparing demonstration materials to showcase the solution's capabilities for potential full-scale implementation.
 
 ## PROJECT OVERVIEW
 
-**SMPPI Dashboard** is a modern ASP.NET Core MVC web application designed to streamline research and innovation management at UMS. The system provides:
+**SMPPI Dashboard** is a modern ASP.NET Core MVC web application designed to demonstrate how research and innovation management can be streamlined at UMS. The proof-of-concept system showcases:
 
-- **Dashboard Analytics** - Real-time statistics and visualizations of research activities
-- **Advanced Search** - Powerful filtering across researchers, projects, publications, and grants
-- **Data Export** - Export capabilities to Excel, PDF, and CSV formats
-- **Grant Management** - Comprehensive tracking of FRGS and other grant schemes (2020-2024)
-- **Publication Tracking** - Monitor indexed journals, conferences, and citations
-- **IP Management** - Track patents, copyrights, and intellectual property
+- **Dashboard Analytics** - Visual representation of research metrics through interactive charts
+- **Advanced Search** - Multi-criteria filtering capabilities for researchers, projects, publications, and grants
+- **Data Export** - Demonstration of export capabilities to Excel, PDF, and CSV formats
+- **Grant Management** - Prototype tracking system for FRGS and other research grants
+- **Publication Tracking** - Sample monitoring of indexed journals, conferences, and research outputs
+- **IP Management** - Conceptual framework for tracking patents, copyrights, and intellectual property
 
 **Technology Stack:**
 - Backend: ASP.NET Core 8.0 MVC (C#)
-- Database: PostgreSQL (Production) / SQL Server (Development)
-- Frontend: Bootstrap 5, Chart.js
-- Deployment: Railway.app (Cloud) + GitHub Pages (Demo)
+- Database: SQL Server (Development/Demo)
+- Frontend: Bootstrap 5, Chart.js for visualizations
+- Deployment: GitHub Pages (Static Demo) + Cloud hosting (Future)
 
 ## MILESTONE PHASES
 
 | Phase | Calendar Window | Objectives | Key Tasks |
 |-------|----------------|------------|-----------|
-| **Phase 1 - Database Setup & Data Migration** | Weeks 1-3 (11 April - 1 May 2025) | Establish database infrastructure and migrate historical data | • Configure PostgreSQL database on Railway.app<br>• Execute schema creation scripts (7 tables)<br>• Migrate FRGS grant data (2020-2024)<br>• Import academic staff records (15+ researchers)<br>• Validate data integrity and relationships |
-| **Phase 2 - Data Entry & System Testing** | Weeks 4-7 (2 May - 30 May 2025) | Populate system with comprehensive research data | • Enter research project details (20+ projects)<br>• Input publication records (17+ publications)<br>• Add intellectual property data (5+ IP records)<br>• Create graduate researcher profiles (8+ students)<br>• Test dashboard visualizations and charts<br>• Verify search and filter functionality |
-| **Phase 3 - Quality Assurance & Documentation** | Weeks 8-10 (31 May - 20 June 2025) | Ensure system reliability and prepare handover materials | • Conduct end-to-end system testing<br>• Verify export functionality (Excel/PDF/CSV)<br>• Validate grant financial calculations<br>• Test static demo version (GitHub Pages)<br>• Prepare user documentation<br>• Create data entry guidelines |
+| **Phase 1 - System Setup & Sample Data** | Weeks 1-3 (22 Nov - 13 Dec 2025) | Configure development environment and create representative sample data | • Set up local development environment<br>• Configure database schema (7 core tables)<br>• Create sample data representing typical UMS research scenarios<br>• Establish data relationships and test integrity<br>• Document sample data structure |
+| **Phase 2 - Feature Validation & Testing** | Weeks 4-7 (14 Dec 2025 - 10 Jan 2026) | Validate system features and user workflows | • Test dashboard visualizations with sample data<br>• Verify search and filtering across all modules<br>• Validate export functionality (Excel/CSV)<br>• Test responsive design on multiple devices<br>• Document feature capabilities and limitations<br>• Identify areas for improvement |
+| **Phase 3 - Demo Preparation & Documentation** | Weeks 8-10 (11 Jan - 31 Jan 2026) | Prepare demonstration materials and comprehensive documentation | • Create static demo version for presentations<br>• Develop user guide and system documentation<br>• Prepare demonstration scenarios and scripts<br>• Compile technical documentation<br>• Create proposal for full-scale implementation<br>• Present findings and recommendations |
 
 ## DETAILED RESPONSIBILITIES
 
-### 1. Database Administration
-- Configure and maintain PostgreSQL database on Railway.app cloud platform
-- Execute SQL scripts for schema creation and data seeding
-- Create database backups and implement recovery procedures
-- Monitor database performance and optimize queries
-- Manage database migrations using Entity Framework Core
+### 1. System Configuration & Setup
+- Set up local development environment (Visual Studio or VS Code)
+- Configure database schema using provided SQL scripts
+- Initialize Entity Framework Core models and migrations
+- Test application compilation and local execution
+- Document configuration steps and requirements
 
-### 2. Data Migration & Entry
-- Migrate historical FRGS grant data from existing systems
-  - Fasa 1/2020: 26 projects, RM 2,600,515
-  - Fasa 1/2021: 9 projects, RM 1,118,062
-  - Fasa 1/2022: 30 projects, RM 3,941,772
-  - Fasa 1/2023: 29 projects, RM 3,486,722
-  - Fasa 1/2024: 25 projects, RM 2,913,753
-- Input academic staff profiles with research domains
-- Enter research project details including budgets and milestones
-- Record publication data (indexed journals, conferences, books)
-- Document intellectual property applications and grants
-- Maintain graduate researcher records
+### 2. Sample Data Preparation
+- Create representative sample data for demonstration purposes:
+  - Academic staff profiles (diverse faculties and research domains)
+  - Research project records (various grant types and statuses)
+  - Publication entries (journals, conferences, books)
+  - Grant financial data (budget allocations and spending)
+  - Intellectual property records (patents, copyrights)
+  - Graduate researcher profiles (PhD, Master's students)
+- Ensure sample data reflects realistic UMS research scenarios
+- Maintain data consistency and proper relationships
+- Document sample data structure and rationale
 
-### 3. Data Validation & Quality Control
-- Verify accuracy of financial calculations (allocated vs spent amounts)
-- Validate foreign key relationships between tables
-- Check data completeness for all required fields
-- Ensure consistency across linked records (projects, publications, IP)
-- Identify and resolve data anomalies or duplicates
+### 3. Feature Validation & Testing
+- Test core dashboard functionality:
+  - Verify statistical calculations display correctly
+  - Validate Chart.js visualizations render properly
+  - Test interactive chart features (tooltips, legends)
+- Test search and filtering across all modules:
+  - Researchers (by name, faculty, domain, position)
+  - Projects (by grant type, phase, status, budget)
+  - Publications (by type, year, author)
+  - Grants (by scheme, fiscal year)
+  - IP (by type, status, inventor)
+- Verify export functionality:
+  - Excel export with proper formatting (EPPlus library)
+  - CSV export with UTF-8 encoding (CsvHelper library)
+  - Test exported file integrity
+- Test responsive design on various devices and screen sizes
+- Identify bugs, issues, or areas for improvement
 
-### 4. System Testing
-- Test dashboard statistics and Chart.js visualizations
-- Verify search functionality across all modules
-- Validate filtering options (by faculty, domain, status, year)
-- Test pagination and sorting features
-- Check export functionality (Excel, PDF, CSV)
-- Verify responsive design on mobile devices
+### 4. Demo Preparation
+- Create static demo version for presentations
+- Develop demonstration scenarios showcasing key features
+- Prepare presentation materials and talking points
+- Set up demo environment (GitHub Pages or local hosting)
+- Create visual materials (screenshots, flowcharts)
 
-### 5. Documentation
-- Create data entry user guides
-- Document database schema and relationships
-- Prepare sample data documentation
-- Write troubleshooting guides for common issues
-- Create video tutorials for key functions (optional)
+### 5. Documentation Development
+- Write comprehensive user documentation
+- Create technical documentation for developers
+- Prepare system architecture documentation
+- Document feature capabilities and limitations
+- Develop proposal for full-scale implementation
+- Create training materials for end-users
 
 ## DELIVERABLES
 
-### 1. Database Setup Package
-- PostgreSQL database configured on Railway.app
-- Complete schema with 7 tables and indexes:
-  - tblAcademicStaff
-  - tblResearchProjects
-  - tblPublications
-  - tblGrantFinancials
-  - tblIntellectualProperty
-  - tblGraduateResearchers
-  - tblAuditLog
-- Database backup and restore procedures
+### 1. Configured System
+- Fully functional local development environment
+- Complete database schema with 7 core tables:
+  - tblAcademicStaff (researcher profiles)
+  - tblResearchProjects (project tracking)
+  - tblPublications (research outputs)
+  - tblGrantFinancials (funding data)
+  - tblIntellectualProperty (IP records)
+  - tblGraduateResearchers (student profiles)
+  - tblAuditLog (system activity tracking)
+- Sample data representing realistic UMS scenarios
 
-### 2. Populated Database
-- **Minimum data requirements:**
-  - 15+ Academic Staff records
-  - 20+ Research Projects (FRGS 2020-2024)
-  - 17+ Publication records
-  - 5+ Grant Financial records
-  - 5+ Intellectual Property records
-  - 8+ Graduate Researcher profiles
-- All data validated and cross-referenced
+### 2. Testing Documentation
+- Comprehensive test report covering:
+  - Dashboard functionality (statistics, charts)
+  - Search and filter capabilities
+  - Export features (Excel, CSV)
+  - Responsive design across devices
+  - Browser compatibility results
+- Bug reports and recommendations
+- Feature validation checklist
+- User experience observations
 
 ### 3. Weekly Progress Reports
 - Status updates on completed tasks
-- Data entry progress statistics
 - Issues encountered and resolutions
+- Screenshots demonstrating progress
 - Upcoming week's planned activities
-- Screenshots of system functionality
+- Risk assessment and mitigation strategies
 
-### 4. Testing Documentation
-- Test cases for all modules:
-  - Dashboard (statistics, charts)
-  - Researchers (search, filter)
-  - Projects (advanced filtering)
-  - Publications (by type, year, quartile)
-  - Grants (financial tracking)
-  - Intellectual Property (by type, status)
-- Bug reports and resolution status
-- Browser compatibility testing results
-- Mobile responsiveness test results
+### 4. Demonstration Materials (31 January 2026)
+- Static demo version (GitHub Pages or equivalent)
+- Demonstration script and scenarios
+- Presentation slides showcasing features
+- Video walkthrough (optional but recommended)
+- Screenshots of key features
 
-### 5. User Documentation Package (20 June 2025)
-- Data Entry Guidelines
-  - Step-by-step procedures for adding researchers
-  - How to create new research projects
-  - Publication entry workflows
-  - Grant financial data entry
-  - IP record management
-- System User Manual
-  - Dashboard navigation guide
+### 5. Comprehensive Documentation Package
+- **System Overview**
+  - Architecture description
+  - Technology stack details
+  - Database schema documentation
+  - Feature catalog
+- **User Guide**
+  - Dashboard navigation
   - Search and filter instructions
   - Export functionality guide
-  - Troubleshooting common issues
-- Database Maintenance Guide
-  - Backup procedures
-  - Data validation checklist
-  - Schema documentation
-  - Sample SQL queries for reports
+  - Common workflows and scenarios
+- **Technical Documentation**
+  - Installation and setup guide
+  - Configuration instructions
+  - Sample data structure
+  - Code organization overview
+- **Proposal for Full Implementation**
+  - Lessons learned from proof-of-concept
+  - Recommended enhancements
+  - Implementation roadmap
+  - Resource requirements
+  - Budget estimates
 
-### 6. System Handover Materials
-- Railway.app deployment documentation
-- GitHub Pages static demo link
-- Database credentials and access details
-- List of known issues and future enhancements
-- Contact information for technical support
+### 6. Handover Package
+- GitHub repository with complete code
+- Sample data files (SQL scripts or seed data)
+- Configuration files and settings
+- List of known issues and limitations
+- Recommendations for next phase
+- Contact information for technical questions
 
 ## PERFORMANCE METRICS
 
 The Research Data Officer's performance will be evaluated based on:
 
-1. **Data Accuracy**: 95%+ accuracy in data entry
-2. **Completeness**: All minimum data requirements met
+1. **System Functionality**: All core features operational and demonstrable
+2. **Testing Completeness**: Comprehensive validation of all modules
 3. **Timeliness**: Weekly milestones achieved on schedule
-4. **Documentation Quality**: Clear, comprehensive user guides
-5. **System Functionality**: All features tested and working
-6. **Communication**: Regular progress updates and issue reporting
+4. **Documentation Quality**: Clear, comprehensive, and professional documentation
+5. **Demo Readiness**: Effective demonstration materials prepared
+6. **Communication**: Regular progress updates and proactive issue reporting
+7. **Problem-Solving**: Ability to identify and resolve technical challenges
 
 ## WORKING ARRANGEMENTS
 
 - **Work Hours**: 4 hours per day, 5 days per week
-- **Work Mode**: Hybrid (remote/on-site as needed)
+- **Work Mode**: Flexible (remote/on-site as needed)
 - **Reporting**: Weekly progress reports to Project Leader
-- **Meetings**: Bi-weekly check-ins with development team
+- **Meetings**: Bi-weekly check-ins with project team
 - **Tools Provided**:
-  - Access to Railway.app dashboard
-  - PostgreSQL database credentials
+  - Development environment setup guide
   - GitHub repository access
   - Sample data templates
   - Testing checklist documents
+  - Documentation templates
 
 ## SKILLS REQUIRED
 
-- Basic understanding of databases (SQL queries helpful)
-- Attention to detail for accurate data entry
-- Familiarity with research grant systems (FRGS, PRGS, etc.)
-- Basic knowledge of research publication types
-- Comfortable using web-based systems
-- Good documentation and reporting skills
-- Problem-solving mindset for data validation issues
+- Basic understanding of databases and SQL
+- Familiarity with research grant systems (FRGS, PRGS, etc.) - beneficial
+- Understanding of research publication types and academic workflows
+- Comfortable with web applications and testing procedures
+- Strong documentation and reporting skills
+- Attention to detail for testing and validation
+- Problem-solving mindset
+- Ability to work independently
+- Good communication skills for reporting progress
 
 ## EXPECTED OUTCOMES
 
 By the end of the 10-week engagement:
 
-1. ✅ **Fully Operational SMPPI Dashboard**
-   - Deployed on Railway.app with PostgreSQL database
-   - Static demo available on GitHub Pages
-   - All modules functional and tested
+1. ✅ **Functional Proof-of-Concept Dashboard**
+   - Local development environment fully operational
+   - Static demo version available for presentations
+   - All core features validated and working
+   - Sample data demonstrating system capabilities
 
-2. ✅ **Comprehensive Research Database**
-   - 5 years of FRGS grant data (2020-2024)
-   - Complete researcher profiles and publications
-   - Intellectual property records
-   - Graduate researcher information
+2. ✅ **Comprehensive Testing Results**
+   - All modules tested and documented
+   - Feature validation report completed
+   - Known issues and limitations identified
+   - Recommendations for improvements documented
 
-3. ✅ **Quality Assurance**
-   - All features tested and verified
-   - Data accuracy validated
-   - Export functions working correctly
-   - Mobile responsiveness confirmed
+3. ✅ **Professional Documentation**
+   - User guides for system navigation
+   - Technical documentation for developers
+   - System architecture overview
+   - Proposal for full-scale implementation
 
-4. ✅ **Complete Documentation**
-   - User guides for all stakeholders
-   - Data entry procedures
-   - System maintenance documentation
-   - Training materials ready
+4. ✅ **Demo-Ready Materials**
+   - Presentation-ready demonstration
+   - Screenshots and visual materials
+   - Demonstration scenarios prepared
+   - Stakeholder presentation materials
 
 ## CONTACT INFORMATION
 
