@@ -1,0 +1,307 @@
+@model SMPPI.Dashboard.ViewModels.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard Overview";
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="display-5 fw-bold text-gradient">
+            <i class="bi bi-speedometer2 me-2"></i>Research & Innovation Dashboard
+        </h1>
+        <p class="text-muted">Comprehensive overview of research activities and grant management</p>
+    </div>
+</div>
+
+<!-- Statistics Cards -->
+<div class="row g-4 mb-4">
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100 card-hover">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <div class="stat-icon bg-primary-subtle text-primary">
+                            <i class="bi bi-people-fill fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h6 class="text-muted mb-1">Total Researchers</h6>
+                        <h2 class="mb-0 fw-bold">@Model.TotalResearchers</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100 card-hover">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <div class="stat-icon bg-success-subtle text-success">
+                            <i class="bi bi-briefcase-fill fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h6 class="text-muted mb-1">Active Projects</h6>
+                        <h2 class="mb-0 fw-bold">@Model.ActiveProjects</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100 card-hover">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <div class="stat-icon bg-warning-subtle text-warning">
+                            <i class="bi bi-book-fill fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h6 class="text-muted mb-1">Publications (@DateTime.Now.Year)</h6>
+                        <h2 class="mb-0 fw-bold">@Model.CurrentYearPublications</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card border-0 shadow-sm h-100 card-hover">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <div class="stat-icon bg-info-subtle text-info">
+                            <i class="bi bi-cash-stack fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h6 class="text-muted mb-1">Total Grant Amount</h6>
+                        <h2 class="mb-0 fw-bold">RM @Model.TotalGrantAmount.ToString("N0")</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="row g-4 mb-4">
+    <!-- Projects by Phase Chart -->
+    <div class="col-lg-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="mb-0 fw-bold">
+                    <i class="bi bi-bar-chart-fill me-2 text-primary"></i>Projects by Phase
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="projectsByPhaseChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Publications by Type Chart -->
+    <div class="col-lg-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="mb-0 fw-bold">
+                    <i class="bi bi-pie-chart-fill me-2 text-success"></i>Publications by Type
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="publicationsByTypeChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mb-4">
+    <!-- Research Domain Distribution -->
+    <div class="col-lg-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="mb-0 fw-bold">
+                    <i class="bi bi-bullseye me-2 text-warning"></i>Research Domain Distribution
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="researchDomainChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grant Spending Chart -->
+    <div class="col-lg-6">
+        <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="mb-0 fw-bold">
+                    <i class="bi bi-graph-up me-2 text-info"></i>Grant Allocation vs Spending
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="grantSpendingChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activities -->
+<div class="row">
+    <div class="col-12">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="mb-0 fw-bold">
+                    <i class="bi bi-activity me-2 text-danger"></i>Recent Activities
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group list-group-flush">
+                    @foreach (var activity in Model.RecentActivities)
+                    {
+                        <div class="list-group-item px-0 border-start-0 border-end-0">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <div class="activity-icon bg-@activity.Color-subtle text-@activity.Color">
+                                        <i class="bi bi-@activity.Icon"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <p class="mb-1">@activity.Description</p>
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock me-1"></i>@activity.Date.ToString("dd MMM yyyy, HH:mm")
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    // Projects by Phase Chart
+    const projectsByPhaseCtx = document.getElementById('projectsByPhaseChart').getContext('2d');
+    new Chart(projectsByPhaseCtx, {
+        type: 'bar',
+        data: {
+            labels: @Html.Raw(Json.Serialize(Model.ProjectsByPhase.Keys)),
+            datasets: [{
+                label: 'Number of Projects',
+                data: @Html.Raw(Json.Serialize(Model.ProjectsByPhase.Values)),
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+
+    // Publications by Type Chart
+    const publicationsByTypeCtx = document.getElementById('publicationsByTypeChart').getContext('2d');
+    new Chart(publicationsByTypeCtx, {
+        type: 'doughnut',
+        data: {
+            labels: @Html.Raw(Json.Serialize(Model.PublicationsByType.Keys)),
+            datasets: [{
+                data: @Html.Raw(Json.Serialize(Model.PublicationsByType.Values)),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                    'rgba(255, 159, 64, 0.7)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom' }
+            }
+        }
+    });
+
+    // Research Domain Distribution Chart
+    const researchDomainCtx = document.getElementById('researchDomainChart').getContext('2d');
+    new Chart(researchDomainCtx, {
+        type: 'pie',
+        data: {
+            labels: @Html.Raw(Json.Serialize(Model.ResearchDomainDistribution.Keys)),
+            datasets: [{
+                data: @Html.Raw(Json.Serialize(Model.ResearchDomainDistribution.Values)),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)',
+                    'rgba(255, 159, 64, 0.7)',
+                    'rgba(201, 203, 207, 0.7)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom' }
+            }
+        }
+    });
+
+    // Grant Spending Chart
+    const grantSpendingCtx = document.getElementById('grantSpendingChart').getContext('2d');
+    new Chart(grantSpendingCtx, {
+        type: 'line',
+        data: {
+            labels: @Html.Raw(Json.Serialize(Model.GrantSpendingData.Select(g => g.Phase))),
+            datasets: [{
+                label: 'Allocated Amount (RM)',
+                data: @Html.Raw(Json.Serialize(Model.GrantSpendingData.Select(g => g.AllocatedAmount))),
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 2,
+                fill: true
+            }, {
+                label: 'Spent Amount (RM)',
+                data: @Html.Raw(Json.Serialize(Model.GrantSpendingData.Select(g => g.SpentAmount))),
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderWidth: 2,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                mode: 'index',
+                intersect: false
+            },
+            plugins: {
+                legend: { position: 'bottom' }
+            },
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+}

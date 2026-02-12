@@ -1,0 +1,203 @@
+@model SMPPI.Dashboard.ViewModels.ResearcherSearchViewModel
+@{
+    ViewData["Title"] = "Academic Staff";
+}
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <h1 class="display-6 fw-bold">
+            <i class="bi bi-people me-2 text-primary"></i>Academic Staff
+        </h1>
+        <p class="text-muted">Search and manage academic researchers</p>
+    </div>
+    <div class="col-md-6 text-end">
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-success" onclick="exportData('excel')">
+                <i class="bi bi-file-earmark-excel me-1"></i>Excel
+            </button>
+            <button type="button" class="btn btn-outline-danger" onclick="exportData('pdf')">
+                <i class="bi bi-file-earmark-pdf me-1"></i>PDF
+            </button>
+            <button type="button" class="btn btn-outline-primary" onclick="exportData('csv')">
+                <i class="bi bi-filetype-csv me-1"></i>CSV
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Search and Filter Card -->
+<div class="card border-0 shadow-sm mb-4">
+    <div class="card-header bg-white border-0 pt-3">
+        <h5 class="mb-0 fw-bold">
+            <i class="bi bi-funnel me-2 text-primary"></i>Search & Filters
+            @if (Model.ActiveFiltersCount > 0)
+            {
+                <span class="badge bg-primary rounded-pill">@Model.ActiveFiltersCount active</span>
+            }
+        </h5>
+    </div>
+    <div class="card-body">
+        <form method="get" asp-action="Index">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Search</label>
+                    <input type="text" class="form-control" name="SearchTerm" value="@Model.SearchTerm" placeholder="Name, UMSPER, Email..." />
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Faculty</label>
+                    <select class="form-select" name="Faculty">
+                        <option value="">All Faculties</option>
+                        @foreach (var faculty in Model.AvailableFaculties)
+                        {
+                            <option value="@faculty" selected="@(Model.Faculty == faculty)">@faculty</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Position</label>
+                    <select class="form-select" name="Position">
+                        <option value="">All Positions</option>
+                        @foreach (var position in Model.AvailablePositions)
+                        {
+                            <option value="@position" selected="@(Model.Position == position)">@position</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Status</label>
+                    <select class="form-select" name="IsActive">
+                        <option value="">All</option>
+                        <option value="true" selected="@(Model.IsActive == true)">Active</option>
+                        <option value="false" selected="@(Model.IsActive == false)">Inactive</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-search me-1"></i>Search
+                    </button>
+                    <a href="@Url.Action("Index")" class="btn btn-outline-secondary">
+                        <i class="bi bi-x-circle me-1"></i>Clear
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Results -->
+<div class="card border-0 shadow-sm">
+    <div class="card-header bg-white border-0 pt-3 d-flex justify-content-between align-items-center">
+        <h5 class="mb-0 fw-bold">
+            <i class="bi bi-list-ul me-2 text-success"></i>Results (@Model.TotalRecords)
+        </h5>
+        <small class="text-muted">Page @Model.PageNumber of @Model.TotalPages</small>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>UMSPER</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Faculty</th>
+                        <th>Research Domain</th>
+                        <th>Publications</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var researcher in Model.Researchers)
+                    {
+                        <tr>
+                            <td><code>@researcher.UMSPER</code></td>
+                            <td class="fw-bold">@researcher.FullName</td>
+                            <td>
+                                <span class="badge bg-info">@researcher.Position</span>
+                            </td>
+                            <td><small>@researcher.Faculty</small></td>
+                            <td><small>@researcher.ResearchDomain</small></td>
+                            <td class="text-center">
+                                <span class="badge bg-primary rounded-pill">@researcher.TotalPublications</span>
+                            </td>
+                            <td class="text-center">
+                                @if (researcher.IsActive)
+                                {
+                                    <span class="badge bg-success">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Inactive</span>
+                                }
+                            </td>
+                            <td class="text-center">
+                                <a href="@Url.Action("Details", new { id = researcher.StaffID })" class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-eye"></i> View
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    @if (Model.TotalPages > 1)
+    {
+        <div class="card-footer bg-white border-0">
+            <nav>
+                <ul class="pagination pagination-sm mb-0 justify-content-center">
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new {
+                                PageNumber = i,
+                                Model.SearchTerm,
+                                Model.Faculty,
+                                Model.Position,
+                                Model.IsActive
+                            })">@i</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    }
+</div>
+
+@section Scripts {
+<script>
+    function exportData(format) {
+        const filters = {
+            SearchTerm: '@Model.SearchTerm',
+            Faculty: '@Model.Faculty',
+            Position: '@Model.Position',
+            IsActive: '@Model.IsActive'
+        };
+
+        $.ajax({
+            url: '@Url.Action("ExportResearchers", "Reports")',
+            type: 'POST',
+            data: {
+                format: format,
+                filters: JSON.stringify(filters)
+            },
+            xhrFields: {
+                responseType: 'blob'
+            },
+            success: function(blob, status, xhr) {
+                const filename = xhr.getResponseHeader('Content-Disposition')?.split('filename=')[1] || `Researchers_${format}.${format}`;
+                const link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = filename;
+                link.click();
+            },
+            error: function() {
+                alert('Export failed. Please try again.');
+            }
+        });
+    }
+</script>
+}
