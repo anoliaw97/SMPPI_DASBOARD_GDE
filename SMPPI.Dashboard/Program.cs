@@ -7,9 +7,22 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configure Database
+// Configure Database (supports both SQL Server and PostgreSQL)
+var databaseProvider = builder.Configuration.GetValue<string>("DatabaseProvider") ?? "SqlServer";
+var connectionString = builder.Configuration.GetConnectionString("SMPPIDatabase")
+    ?? builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<SMPPIDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SMPPIDatabase")));
+{
+    if (databaseProvider.Equals("PostgreSQL", StringComparison.OrdinalIgnoreCase))
+    {
+        options.UseNpgsql(connectionString);
+    }
+    else
+    {
+        options.UseSqlServer(connectionString);
+    }
+});
 
 // Configure Session for filters
 builder.Services.AddSession(options =>

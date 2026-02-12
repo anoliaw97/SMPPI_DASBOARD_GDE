@@ -265,6 +265,61 @@ dotnet watch run
 
 The application will hot-reload on file changes.
 
+## 🚂 Railway.app Deployment (Cloud Hosting)
+
+**Quick Deploy to Railway.app** (5 minutes setup):
+
+### Why Railway?
+- ✅ Free $5/month credit
+- ✅ Auto-deploy from GitHub
+- ✅ PostgreSQL database included
+- ✅ Automatic HTTPS
+- ✅ Perfect for demos and production
+
+### Quick Steps:
+
+1. **Push to GitHub** (if not already done)
+   ```bash
+   git push origin claude/aspnet-dashboard-visualization-Vah2Q
+   ```
+
+2. **Deploy on Railway**:
+   - Go to https://railway.app
+   - Sign up with GitHub
+   - Click "New Project" → "Deploy from GitHub repo"
+   - Select `SMPPI_DASBOARD_GDE` repository
+   - Railway auto-detects Dockerfile and deploys
+
+3. **Add PostgreSQL Database**:
+   - In Railway project: "New" → "Database" → "PostgreSQL"
+   - Database URL auto-configured
+
+4. **Set Environment Variables**:
+   ```
+   DatabaseProvider=PostgreSQL
+   ASPNETCORE_ENVIRONMENT=Production
+   ```
+
+5. **Initialize Database**:
+   ```bash
+   # Install Railway CLI
+   npm i -g @railway/cli
+   railway login
+   railway link
+
+   # Run PostgreSQL migrations
+   psql $DATABASE_URL -f SMPPI.Dashboard/SQL/PostgreSQL_01_CreateSchema.sql
+   psql $DATABASE_URL -f SMPPI.Dashboard/SQL/PostgreSQL_02_SeedData.sql
+   ```
+
+6. **Generate Domain**:
+   - Settings → "Generate Domain"
+   - Access at: `https://your-app.railway.app`
+
+**📖 Full Railway Guide**: See [RAILWAY_DEPLOYMENT.md](RAILWAY_DEPLOYMENT.md) for detailed instructions.
+
+**🔄 Auto-Deploy**: Every push to your branch automatically deploys to Railway!
+
 ## 📖 Usage Guide
 
 ### Dashboard Overview
